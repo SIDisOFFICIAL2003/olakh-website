@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { supabase } from "../../lib/supabase";
+export const dynamic = "force-dynamic";
 
 type Screening = {
   id: string;
