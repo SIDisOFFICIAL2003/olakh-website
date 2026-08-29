@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
-import { supabase } from "../../../lib/supabase";
-import AdminNavbar from "../../components/AdminNavbar";
+import { supabase } from "../../../../lib/supabase";
+import AdminNavbar from "../../../components/AdminNavbar";
 
 export default function EditScreeningPage() {
   const router = useRouter();

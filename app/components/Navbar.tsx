@@ -8,7 +8,7 @@ export default function Navbar() {
   const navLinkClass =
     "relative text-[15px] font-bold tracking-[0.04em] transition-all duration-300";
 
-  function isActive(href) {
+  function isActive(href: string) {
     if (href === "/") {
       return pathname === "/";
     }
@@ -16,7 +16,7 @@ export default function Navbar() {
     return pathname === href || pathname.startsWith(`${href}/`);
   }
 
-  function getNavClass(href) {
+  function getNavClass(href: string) {
     const active = isActive(href);
 
     return `${navLinkClass} ${

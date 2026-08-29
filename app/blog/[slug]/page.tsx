@@ -149,7 +149,7 @@ export default async function BlogPostPage({
 
   const paragraphs = post.content
     .split(/\n\s*\n/)
-    .map((paragraph) => paragraph.trim())
+    .map((paragraph: string) => paragraph.trim())
     .filter(Boolean);
 
 
@@ -236,7 +236,7 @@ export default async function BlogPostPage({
         <div className="mx-auto max-w-3xl px-6">
 
 
-          {paragraphs.map((paragraph, index) => {
+          {paragraphs.map((paragraph: string, index: number) => {
 
             const paragraphNumber = index + 1;
 
