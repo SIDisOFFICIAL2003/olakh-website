@@ -1072,14 +1072,14 @@ export default async function Home() {
               JOURNEY STATISTICS
           ================================================== */}
 
-          <div className="mt-16 grid border-t border-[#150297]/20 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid grid-cols-2 border-t border-[#150297]/20 lg:mt-16 lg:grid-cols-4">
 
 
             {/* BLOGS PUBLISHED */}
 
-            <div className="border-b border-[#150297]/15 py-10 sm:border-r sm:pr-8 lg:border-b-0 lg:px-7 lg:first:pl-0">
+            <div className="border-b border-r border-[#150297]/15 py-7 pr-4 sm:py-10 sm:pr-8 lg:border-b-0 lg:px-7 lg:first:pl-0">
 
-              <p className="text-5xl font-bold tracking-tight md:text-6xl">
+              <p className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
                 {totalPublishedBlogs}
               </p>
 
@@ -1089,7 +1089,7 @@ export default async function Home() {
               </p>
 
 
-              <p className="mt-2 max-w-[230px] text-sm leading-6 text-[#777]">
+              <p className="mt-2 max-w-[230px] text-xs leading-5 text-[#777] sm:text-sm sm:leading-6">
                 Stories, reflections and ideas shared through the
                 Olakh Journal.
               </p>
@@ -1100,9 +1100,9 @@ export default async function Home() {
 
             {/* SCREENINGS COMPLETED */}
 
-            <div className="border-b border-[#150297]/15 py-10 sm:pl-8 lg:border-b-0 lg:border-r lg:px-7">
+            <div className="border-b border-[#150297]/15 py-7 pl-4 sm:py-10 sm:pl-8 lg:border-b-0 lg:border-r lg:px-7">
 
-              <p className="text-5xl font-bold tracking-tight md:text-6xl">
+              <p className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
                 {totalCompletedScreenings}
               </p>
 
@@ -1112,7 +1112,7 @@ export default async function Home() {
               </p>
 
 
-              <p className="mt-2 max-w-[230px] text-sm leading-6 text-[#777]">
+              <p className="mt-2 max-w-[230px] text-xs leading-5 text-[#777] sm:text-sm sm:leading-6">
                 Film screenings and collective conversations that
                 have already taken place.
               </p>
@@ -1123,9 +1123,9 @@ export default async function Home() {
 
             {/* ESTIMATED PARTICIPANTS */}
 
-            <div className="border-b border-[#150297]/15 py-10 sm:border-r sm:pr-8 lg:border-b-0 lg:px-7">
+            <div className="border-r border-[#150297]/15 py-7 pr-4 sm:py-10 sm:pr-8 lg:border-b-0 lg:px-7">
 
-              <p className="text-5xl font-bold tracking-tight md:text-6xl">
+              <p className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
 
                 {estimatedParticipants}
 
@@ -1143,7 +1143,7 @@ export default async function Home() {
               </p>
 
 
-              <p className="mt-2 max-w-[230px] text-sm leading-6 text-[#777]">
+              <p className="mt-2 max-w-[230px] text-xs leading-5 text-[#777] sm:text-sm sm:leading-6">
                 Estimated community participation across completed
                 screenings.
               </p>
@@ -1154,9 +1154,9 @@ export default async function Home() {
 
             {/* AVERAGE */}
 
-            <div className="py-10 sm:pl-8 lg:px-7 lg:pr-0">
+            <div className="py-7 pl-4 sm:py-10 sm:pl-8 lg:px-7 lg:pr-0">
 
-              <p className="text-5xl font-bold tracking-tight md:text-6xl">
+              <p className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
                 {averageParticipantsPerScreening}
               </p>
 
@@ -1166,7 +1166,7 @@ export default async function Home() {
               </p>
 
 
-              <p className="mt-2 max-w-[230px] text-sm leading-6 text-[#777]">
+              <p className="mt-2 max-w-[230px] text-xs leading-5 text-[#777] sm:text-sm sm:leading-6">
                 Current estimated average number of participants
                 attending each screening.
               </p>
