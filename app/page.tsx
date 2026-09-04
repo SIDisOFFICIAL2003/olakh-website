@@ -325,121 +325,131 @@ export default async function Home() {
 
               {upcomingScreening ? (
 
-                <div className="w-full max-w-sm rounded-2xl bg-white p-6 text-[#150297] shadow-[0_20px_60px_rgba(0,0,0,0.3)] transition-transform duration-300 hover:-translate-y-1 md:p-7">
+                <div className="w-full max-w-sm overflow-hidden rounded-2xl bg-white text-[#150297] shadow-[0_20px_60px_rgba(0,0,0,0.3)] transition-transform duration-300 hover:-translate-y-1">
 
-                  <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#311EB2]">
-                    Upcoming screening
-                  </p>
-
-
-                  <h2 className="mt-3 text-2xl font-bold leading-tight tracking-tight md:text-3xl">
-                    Join our next screening
-                  </h2>
-
-
-                  <p className="mt-3 text-sm leading-5 text-[#666]">
-                    Be part of our upcoming film screening
-                    and collective conversation.
-                  </p>
-
-
-                  <div className="mt-5 space-y-3 border-t border-[#150297]/10 pt-5">
-
-                    {/* DATE */}
-
-                    <div className="flex items-center gap-3">
-
-                      <span className="text-[#6C0666]">
-                        ◷
-                      </span>
-
-                      <div>
-
-                        <p className="text-[10px] uppercase tracking-wider text-[#888]">
-                          Date
-                        </p>
-
-                        <p className="text-sm font-semibold">
-                          {formatDate(
-                            upcomingScreening.screening_date
-                          )}
-                        </p>
-
-                      </div>
-
-                    </div>
-
-
-                    {/* TIME */}
-
-                    {upcomingScreening.screening_time && (
-
-                      <div className="flex items-center gap-3">
-
-                        <span className="text-[#6C0666]">
-                          ◷
-                        </span>
-
-                        <div>
-
-                          <p className="text-[10px] uppercase tracking-wider text-[#888]">
-                            Time
-                          </p>
-
-                          <p className="text-sm font-semibold">
-                            {formatTime(
-                              upcomingScreening.screening_time
-                            )}
-                          </p>
-
-                        </div>
-
-                      </div>
-
-                    )}
-
-
-                    {/* LOCATION */}
-
-                    {(upcomingScreening.venue ||
-                      upcomingScreening.city) && (
-
-                      <div className="flex items-center gap-3">
-
-                        <span className="text-[#6C0666]">
-                          ⌖
-                        </span>
-
-                        <div>
-
-                          <p className="text-[10px] uppercase tracking-wider text-[#888]">
-                            Location
-                          </p>
-
-                          <p className="text-sm font-semibold">
-                            {[
-                              upcomingScreening.venue,
-                              upcomingScreening.city,
-                            ]
-                              .filter(Boolean)
-                              .join(", ")}
-                          </p>
-
-                        </div>
-
-                      </div>
-
-                    )}
-
-                  </div>
-
+                  {/* IMAGE */}
 
                   <a
                     href={`/screenings/${upcomingScreening.slug}`}
-                    className="mt-6 inline-flex rounded-full bg-[#FC65C3] px-5 py-2.5 text-sm font-bold text-[#150297] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#150297] hover:text-white"
+                    className="group block"
                   >
-                    Join the screening →
+                    <div className="relative aspect-[16/8] overflow-hidden bg-[#150297]">
+
+                      {upcomingScreening.cover_image ? (
+                        <img
+                          src={upcomingScreening.cover_image}
+                          alt={upcomingScreening.title}
+                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      ) : (
+                        <div
+                          className="h-full w-full"
+                          style={{
+                            backgroundImage: "url('/olakh-pattern.png')",
+                            backgroundSize: "cover",
+                            backgroundPosition: "center",
+                          }}
+                        />
+                      )}
+
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#150297]/25 to-transparent" />
+
+                      <div className="absolute left-4 top-4 rounded-full bg-white/95 px-3 py-1.5 text-[9px] font-bold uppercase tracking-[0.18em] text-[#311EB2] shadow-sm">
+                        Upcoming screening
+                      </div>
+
+                    </div>
                   </a>
+
+                  {/* CONTENT */}
+
+                  <div className="p-5 md:p-6">
+
+                    <h2 className="line-clamp-2 text-2xl font-bold leading-tight tracking-tight md:text-[28px]">
+                      {upcomingScreening.title}
+                    </h2>
+
+                    <div className="mt-4 space-y-2.5 border-t border-[#150297]/10 pt-4">
+
+                      {/* DATE */}
+
+                      <div className="flex items-center gap-3">
+                        <span className="w-4 shrink-0 text-sm text-[#6C0666]">
+                          ◷
+                        </span>
+
+                        <div className="min-w-0">
+                          <p className="text-[9px] uppercase tracking-[0.14em] text-[#888]">
+                            Date
+                          </p>
+
+                          <p className="text-sm font-semibold">
+                            {formatDate(
+                              upcomingScreening.screening_date
+                            )}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* TIME */}
+
+                      {upcomingScreening.screening_time && (
+                        <div className="flex items-center gap-3">
+                          <span className="w-4 shrink-0 text-sm text-[#6C0666]">
+                            ◷
+                          </span>
+
+                          <div>
+                            <p className="text-[9px] uppercase tracking-[0.14em] text-[#888]">
+                              Time
+                            </p>
+
+                            <p className="text-sm font-semibold">
+                              {formatTime(
+                                upcomingScreening.screening_time
+                              )}
+                            </p>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* LOCATION */}
+
+                      {(upcomingScreening.venue ||
+                        upcomingScreening.city) && (
+                        <div className="flex items-center gap-3">
+                          <span className="w-4 shrink-0 text-sm text-[#6C0666]">
+                            ⌖
+                          </span>
+
+                          <div className="min-w-0">
+                            <p className="text-[9px] uppercase tracking-[0.14em] text-[#888]">
+                              Location
+                            </p>
+
+                            <p className="truncate text-sm font-semibold">
+                              {[
+                                upcomingScreening.venue,
+                                upcomingScreening.city,
+                              ]
+                                .filter(Boolean)
+                                .join(", ")}
+                            </p>
+                          </div>
+                        </div>
+                      )}
+
+                    </div>
+
+                    <a
+                      href={`/screenings/${upcomingScreening.slug}`}
+                      className="mt-5 flex w-full items-center justify-between rounded-full bg-[#FC65C3] px-5 py-2.5 text-sm font-bold text-[#150297] transition-all duration-300 hover:bg-[#150297] hover:text-white"
+                    >
+                      <span>Join the screening</span>
+                      <span>→</span>
+                    </a>
+
+                  </div>
 
                 </div>
 
