@@ -118,14 +118,15 @@ export default function About() {
               </p>
 
               <h2 className="mt-6 text-4xl font-bold leading-tight md:text-5xl">
-                A Maharashtra where communities have space, agency and
-                collective power.
+                A future where every voice has space, every story holds value
+                and communities have the power to shape cinema.
               </h2>
 
               <p className="mt-8 text-lg leading-8 text-white/80 md:text-xl">
-                A Maharashtra where marginalised communities have the
-                space, agency and collective power to engage with,
-                critique and create cinema.
+                We envision an inclusive culture of cinema where marginalised
+                communities can engage, question, critique and create freely—
+                telling their stories on their own terms and being heard with
+                dignity.
               </p>
 
             </div>
